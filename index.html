@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホーム ｜ fukasitakao</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* --- ホーム専用スタイル --- */
+  .hero{padding:18px 0 0}
+  .carousel{position:relative;max-width:1180px;margin:0 auto;height:560px;overflow:hidden}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;display:flex;align-items:center;justify-content:flex-end}
+  .slide.on{opacity:1}
+  .slide .bgimg{position:absolute;inset:0;filter:blur(7px) grayscale(.55) brightness(.96);transform:scale(1.06)}
+  .s1 .bgimg{background:linear-gradient(120deg,#7e8488,#c7cbce 45%,#9aa0a4 70%,#6f7579)}
+  .s2 .bgimg{background:linear-gradient(120deg,#6c7378,#b9bdc0 40%,#dfe2e3 55%,#8e9498 80%)}
+  .s3 .bgimg{background:linear-gradient(130deg,#8a8f93,#c2c6c9 50%,#7c8286)}
+  .s4 .bgimg{background:linear-gradient(110deg,#777d81,#b4b9bc 45%,#cfd3d5 60%,#82888c)}
+  .s5 .bgimg{background:linear-gradient(125deg,#83898d,#cbcfd2 50%,#888e92)}
+  .slide .ov{position:relative;z-index:2;text-align:center;color:#fff;padding-right:9%}
+  .slide .ov .bigname{font-weight:300;font-size:clamp(34px,4.6vw,58px);letter-spacing:.5em;text-shadow:0 1px 12px rgba(0,0,0,.18)}
+  .slide .ov .lbl{font-size:clamp(18px,2.4vw,30px);letter-spacing:.4em;margin-top:38px;text-shadow:0 1px 10px rgba(0,0,0,.2)}
+  .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;background:none;border:none;cursor:pointer;font-size:34px;color:#1c1c1c;width:60px;height:60px;opacity:.85}
+  .arrow:hover{opacity:1}.arrow.prev{left:6px}.arrow.next{right:6px}
+  .dots{display:flex;gap:14px;justify-content:center;margin-top:18px}
+  .dot{width:9px;height:9px;border-radius:50%;background:#bdbdbd;border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s}
+  .dot.on{background:#fff;box-shadow:0 0 0 1px #999;transform:scale(1.05)}
+  .tagline{max-width:1180px;margin:46px auto 0;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .tagline .txt{font-family:"Noto Serif JP",serif;font-size:clamp(24px,3.3vw,40px);font-weight:500;letter-spacing:.06em;display:flex;align-items:center;gap:22px}
+  .tagline .txt .bar{width:5px;height:46px;background:#1e1e1e;display:inline-block}
+  .tagline .txt em{font-family:"Playfair Display",serif;font-style:italic;font-weight:500}
+  .bim-ico{width:150px;height:auto;flex-shrink:0}
+  .divider{max-width:1180px;margin:40px auto 0;border-top:1px solid var(--line)}
+  .info-sec{padding:70px 0 110px}
+  .info-sec .label{font-family:"Noto Serif JP",serif;font-size:22px;color:var(--gray-head);letter-spacing:.12em;margin:0 auto 30px;max-width:1180px;padding:0 40px}
+  .cols{max-width:1180px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:64px}
+  .col .num{font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(78px,8vw,120px);color:var(--num);line-height:.9;margin-bottom:34px}
+  .col h3{font-weight:700;font-size:20px;letter-spacing:.32em;color:#171717;margin-bottom:26px;line-height:1.7}
+  .col .body{font-size:15px;color:var(--text-soft);line-height:2}
+  .col .body p{margin-bottom:18px}.col .body .list{list-style:none}
+  @media(max-width:880px){
+    .carousel{height:340px}.tagline{padding:0 22px}.bim-ico{width:110px}
+    .cols{grid-template-columns:1fr;gap:48px;padding:0 22px}
+    .info-sec .label,.divider{padding-left:22px;padding-right:22px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-in">
+    <a class="logo" href="index.html">
+      <span class="corp">株式会社　フ カ シ</span>
+      <span class="mark"><span class="name">FUKASHI</span></span>
+      <span class="tag">創造する －BIM施工図－</span>
+    </a>
+    <nav class="menu">
+      <a href="index.html" class="active">ホーム</a>
+      <a href="company-info.html">企業情報</a>
+      <a href="about.html">会社概要</a>
+      <a href="services.html">事業紹介</a>
+      <a href="recruit.html">採用情報</a>
+      <a href="access.html">アクセス</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+    <button class="menu-btn" aria-label="メニュー">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="carousel" id="carousel">
+    <div class="slide s1 on"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">建築施工図</div></div></div>
+    <div class="slide s2"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">仮設計画図</div></div></div>
+    <div class="slide s3"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">BIMモデリング</div></div></div>
+    <div class="slide s4"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">人材派遣</div></div></div>
+    <div class="slide s5"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">ボイラーメンテナンス</div></div></div>
+    <button class="arrow prev" id="prev" aria-label="前へ">←</button>
+    <button class="arrow next" id="next" aria-label="次へ">→</button>
+  </div>
+  <div class="dots" id="dots"></div>
+
+  <div class="tagline">
+    <div class="txt"><span class="bar"></span><span>未来へつなぐ　<em>―BIM</em>の可能性の先へ―</span></div>
+    <svg class="bim-ico" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" aria-label="BIM建物アイコン">
+      <polygon points="20,95 95,95 95,42 57,30 20,42" fill="none" stroke="#2b2b2b" stroke-width="2"/>
+      <polygon points="57,30 95,42 95,30 57,18" fill="#cdd8e3" stroke="#2b2b2b" stroke-width="1.5"/>
+      <polygon points="20,42 57,30 57,18 20,30" fill="#e3e9ef" stroke="#2b2b2b" stroke-width="1.5"/>
+      <line x1="20" y1="56" x2="95" y2="56" stroke="#2b2b2b" stroke-width="1"/>
+      <line x1="20" y1="70" x2="95" y2="70" stroke="#2b2b2b" stroke-width="1"/>
+      <line x1="20" y1="83" x2="95" y2="83" stroke="#2b2b2b" stroke-width="1"/>
+      <line x1="38" y1="42" x2="38" y2="95" stroke="#2b2b2b" stroke-width="1"/>
+      <line x1="57" y1="30" x2="57" y2="95" stroke="#2b2b2b" stroke-width="1"/>
+      <line x1="76" y1="36" x2="76" y2="95" stroke="#2b2b2b" stroke-width="1"/>
+      <line x1="100" y1="34" x2="125" y2="20" stroke="#2b2b2b" stroke-width="1.4"/>
+      <line x1="125" y1="20" x2="142" y2="40" stroke="#2b2b2b" stroke-width="1.4"/>
+      <line x1="100" y1="34" x2="142" y2="40" stroke="#2b2b2b" stroke-width="1.4"/>
+      <line x1="142" y1="40" x2="132" y2="62" stroke="#2b2b2b" stroke-width="1.4"/>
+      <circle cx="100" cy="34" r="5" fill="#2b2b2b"/><circle cx="125" cy="20" r="5" fill="#2b2b2b"/>
+      <circle cx="142" cy="40" r="5" fill="#2b2b2b"/><circle cx="132" cy="62" r="4" fill="#2b2b2b"/>
+    </svg>
+  </div>
+  <div class="divider"></div>
+</section>
+
+<section class="info-sec">
+  <div class="label serif">情報</div>
+  <div class="cols">
+    <div class="col reveal">
+      <div class="num">01</div>
+      <h3>事 務 所 移 転</h3>
+      <div class="body"><p>【東陽町事務所】<br>2023年11月<br>　東陽町事務所を移転いたしました。</p></div>
+    </div>
+    <div class="col reveal">
+      <div class="num">02</div>
+      <h3>採 用 情 報</h3>
+      <div class="body">
+        <p>・AutoCAD(平面図面)<br>・3D CAD(Revit、ArchiCAD など)<br>　施工図作成経験のある方</p>
+        <p>派遣先および弊社事務所、ご自宅で施工図を作成して頂ける方を募集しております。</p>
+      </div>
+    </div>
+    <div class="col reveal">
+      <div class="num">03</div>
+      <h3>建築施工図・計画図<br>BIM(3D対応)</h3>
+      <div class="body">
+        <ul class="list"><li>・事務所ビル</li><li>・病院</li><li>・学校</li><li>・集合住宅</li><li>・介護施設</li><li>・競技場　　など</li></ul>
+        <p style="margin-top:18px">建築施工図、施工計画図、仮設計画図の作成をしております。</p>
+        <p>3Dでの建物の作成により、完成形が一目で分かり、各種図面作成やシミュレーションが行えます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-logo"><span class="corp">株式会社　フ カ シ</span><span class="name">FUKASHI</span></div>
+    <div class="foot-nav">
+      <div class="group"><a href="index.html">⌂ ホーム</a></div>
+      <div class="group"><a href="company-info.html">▶企業情報</a></div>
+      <div class="group"><a href="about.html">▶会社概要</a></div>
+      <div class="group">
+        <a href="services.html">▶事業紹介</a>
+        <div class="sub">
+          <a href="bim.html">BIM</a><a href="koujizu.html">施工図</a>
+          <a href="kasetsu.html">仮設計画図</a><a href="haken.html">人材派遣</a>
+          <a href="boiler.html">ボイラーメンテナンス</a>
+        </div>
+      </div>
+      <div class="group"><a href="recruit.html">✎ 採用情報</a></div>
+      <div class="group"><a href="access.html">📍 アクセス</a></div>
+      <div class="group"><a href="contact.html">▭ お問い合わせ</a></div>
+    </div>
+  </div>
+  <div class="foot-copy">〒193-0844　東京都八王子市高尾町1677-1-103　／　TEL 042-668-2723　　© 2020 Fukashi Corporation All Right Reserved.</div>
+</footer>
+
+<div class="note">※ ヒーロー背景・フッター写真・ロゴは、元の画像ファイルをいただければ差し替えます（現在は仮の表示です）。</div>
+
+<script>
+  var slides=[].slice.call(document.querySelectorAll('.slide')),dotsWrap=document.getElementById('dots'),idx=0,timer;
+  slides.forEach(function(_,i){var b=document.createElement('button');b.className='dot'+(i===0?' on':'');b.addEventListener('click',function(){go(i);});dotsWrap.appendChild(b);});
+  var dots=[].slice.call(document.querySelectorAll('.dot'));
+  function go(n){slides[idx].classList.remove('on');dots[idx].classList.remove('on');idx=(n+slides.length)%slides.length;slides[idx].classList.add('on');dots[idx].classList.add('on');restart();}
+  function restart(){clearInterval(timer);timer=setInterval(function(){go(idx+1);},5000);}
+  document.getElementById('next').addEventListener('click',function(){go(idx+1);});
+  document.getElementById('prev').addEventListener('click',function(){go(idx-1);});
+  restart();
+  document.querySelector('.menu-btn').addEventListener('click',function(){var m=document.querySelector('nav.menu');var open=m.style.display==='flex';m.style.cssText=open?'':'display:flex;flex-direction:column;position:absolute;top:84px;right:22px;background:#fff;padding:18px 22px;gap:14px;border:1px solid #eee;box-shadow:0 8px 24px rgba(0,0,0,.08);';});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
