@@ -65,3 +65,28 @@ fukashi-site/
 
 - リポジトリは **Public（公開）**。無料の GitHub Pages を使うため。会社サイトのHTMLは元々公開されるものなので問題なし。パスワード等の秘密情報はファイルに含めない。
 - ドメインを切り替えるまでは、今の Wix サイトはそのまま生かしておく（公開が確認できてから切り替える）。
+
+---
+
+## 7. 進捗ログ（2026-06-26 追記）
+
+- ✅ **サイト一式を GitHub にアップロード済み**（13ページ + style.css）。`main` ブランチに配置。
+  - 作業ブランチ：`claude/fukashi-github-pages-nrvwqo`（mainにも反映済み）。
+- ✅ **GitHub Pages 有効化済み**（Source: `main` / root）。デプロイ成功を確認。
+  - 公開（仮）URL：**https://28yu.github.io/fukashi-site/** → ブラウザで表示OK確認済み。
+- ⏭ **次のタスク：元サイト（Wix）への「再現度アップ」**。
+  - 現状、見た目が元サイトとまだ差がある、という指摘あり。
+  - **重要**：再現には元サイト `https://www.fukasitakao.com` の実際の見た目を見る必要がある。
+    旧セッションでは作業環境のネットワーク制限で元サイトにアクセスできず（403）、比較できなかった。
+  - そこで**ネットワークポリシーを変更して新セッションを開始**する方針に切替（このメモはその引き継ぎ）。
+  - **新セッションでまず行うこと**：
+    1. `https://www.fukasitakao.com` に到達できるか確認（curl もしくは Chromium/Playwright）。
+    2. 到達できたら、Playwright で各ページのスクリーンショットを撮る。
+    3. 現行の各 .html / style.css と見比べ、配色・余白・フォント・レイアウト・文言を元サイトへ寄せる。
+    4. 1ページずつ「直す→ユーザーに確認」を繰り返す（運用者は開発初心者のため丁寧に）。
+
+### 新セッションで許可してほしい通信先（ネットワーク許可リスト）
+- `www.fukasitakao.com` / `fukasitakao.com` … 元サイト本体
+- `static.wixstatic.com` / `*.wixstatic.com` / `*.parastorage.com` … Wixの画像・部品（元サイトを正しく描画するため）
+- `*.github.io` … 公開した仮URLを Claude 側でも確認するため
+- `fonts.googleapis.com` / `fonts.gstatic.com` … Webフォント
