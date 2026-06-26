@@ -14,20 +14,19 @@
   .carousel{position:relative;max-width:1180px;margin:0 auto;height:560px;overflow:hidden}
   .slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;display:flex;align-items:center;justify-content:flex-end}
   .slide.on{opacity:1}
-  .slide .bgimg{position:absolute;inset:0;filter:blur(7px) grayscale(.55) brightness(.96);transform:scale(1.06)}
-  .s1 .bgimg{background:linear-gradient(120deg,#7e8488,#c7cbce 45%,#9aa0a4 70%,#6f7579)}
-  .s2 .bgimg{background:linear-gradient(120deg,#6c7378,#b9bdc0 40%,#dfe2e3 55%,#8e9498 80%)}
-  .s3 .bgimg{background:linear-gradient(130deg,#8a8f93,#c2c6c9 50%,#7c8286)}
-  .s4 .bgimg{background:linear-gradient(110deg,#777d81,#b4b9bc 45%,#cfd3d5 60%,#82888c)}
-  .s5 .bgimg{background:linear-gradient(125deg,#83898d,#cbcfd2 50%,#888e92)}
-  .slide .ov{position:relative;z-index:2;text-align:center;color:#fff;padding-right:9%}
-  .slide .ov .bigname{font-weight:300;font-size:clamp(34px,4.6vw,58px);letter-spacing:.5em;text-shadow:0 1px 12px rgba(0,0,0,.18)}
-  .slide .ov .lbl{font-size:clamp(18px,2.4vw,30px);letter-spacing:.4em;margin-top:38px;text-shadow:0 1px 10px rgba(0,0,0,.2)}
+  .slide .bgimg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.02)}
+  .slide .bgimg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.20),rgba(255,255,255,0) 42%,rgba(28,38,52,.20))}
+  .s1 .bgimg{background-image:url(images/hero-white.jpg)}
+  .s2 .bgimg{background-image:url(images/hero-glass.jpg)}
+  .s3 .bgimg{background-image:url(images/hero-curve.jpg)}
+  .slide .ov{position:relative;z-index:2;text-align:center;color:#222;padding-right:9%}
+  .slide .ov .bigname{font-weight:300;font-size:clamp(34px,4.6vw,58px);letter-spacing:.5em;text-shadow:0 1px 16px rgba(255,255,255,.6)}
+  .slide .ov .lbl{font-size:clamp(18px,2.4vw,30px);letter-spacing:.4em;margin-top:38px;text-shadow:0 1px 14px rgba(255,255,255,.6)}
   .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;background:none;border:none;cursor:pointer;font-size:34px;color:#1c1c1c;width:60px;height:60px;opacity:.85}
   .arrow:hover{opacity:1}.arrow.prev{left:6px}.arrow.next{right:6px}
   .dots{display:flex;gap:14px;justify-content:center;margin-top:18px}
   .dot{width:9px;height:9px;border-radius:50%;background:#bdbdbd;border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s}
-  .dot.on{background:#fff;box-shadow:0 0 0 1px #999;transform:scale(1.05)}
+  .dot.on{background:#1c1c1c;transform:scale(1.15)}
   .tagline{max-width:1180px;margin:46px auto 0;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
   .tagline .txt{font-family:"Noto Serif JP",serif;font-size:clamp(24px,3.3vw,40px);font-weight:500;letter-spacing:.06em;display:flex;align-items:center;gap:22px}
   .tagline .txt .bar{width:5px;height:46px;background:#1e1e1e;display:inline-block}
@@ -52,11 +51,7 @@
 
 <header>
   <div class="head-in">
-    <a class="logo" href="index.html">
-      <span class="corp">株式会社　フ カ シ</span>
-      <span class="mark"><span class="name">FUKASHI</span></span>
-      <span class="tag">創造する －BIM施工図－</span>
-    </a>
+    <a class="logo" href="index.html"><img class="logo-img" src="images/logo.jpg" alt="株式会社フカシ FUKASHI"><span class="tag">創造する －BIM施工図－</span></a>
     <nav class="menu">
       <a href="index.html" class="active">ホーム</a>
       <a href="company-info.html">企業情報</a>
@@ -73,10 +68,8 @@
 <section class="hero">
   <div class="carousel" id="carousel">
     <div class="slide s1 on"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">建築施工図</div></div></div>
-    <div class="slide s2"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">仮設計画図</div></div></div>
-    <div class="slide s3"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">BIMモデリング</div></div></div>
-    <div class="slide s4"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">人材派遣</div></div></div>
-    <div class="slide s5"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">ボイラーメンテナンス</div></div></div>
+    <div class="slide s2"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">BIMモデリング</div></div></div>
+    <div class="slide s3"><div class="bgimg"></div><div class="ov"><div class="bigname">FUKASHI</div><div class="lbl">仮設計画図</div></div></div>
     <button class="arrow prev" id="prev" aria-label="前へ">←</button>
     <button class="arrow next" id="next" aria-label="次へ">→</button>
   </div>

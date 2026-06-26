@@ -29,11 +29,8 @@ a{color:inherit;text-decoration:none}
 header{background:#fff;position:sticky;top:0;z-index:60;border-bottom:1px solid #f0f0f0}
 .head-in{display:flex;align-items:center;justify-content:space-between;padding:20px 40px;max-width:1360px;margin:0 auto}
 .logo{display:flex;flex-direction:column;line-height:1}
-.logo .corp{font-size:11px;letter-spacing:.5em;color:#222;margin-bottom:4px;padding-left:42px;font-weight:500}
-.logo .mark{position:relative;display:inline-block}
-.logo .mark::before{content:"";position:absolute;top:-3px;left:0;width:48px;height:7px;background:#111}
-.logo .name{font-weight:900;font-size:38px;letter-spacing:.02em;color:#111;display:block;padding-top:6px}
-.logo .tag{font-size:11.5px;letter-spacing:.18em;color:#222;margin-top:4px}
+.logo-img{height:50px;width:auto;display:block}
+.logo .tag{font-size:11.5px;letter-spacing:.18em;color:#222;margin-top:6px;padding-left:2px}
 nav.menu{display:flex;gap:34px}
 nav.menu a{font-size:15px;color:var(--nav);letter-spacing:.06em;transition:color .2s}
 nav.menu a:hover{color:var(--text)}
@@ -74,14 +71,17 @@ nav.menu a.active{color:var(--nav-active)}
 
 /* ---------- 事業紹介 cards ---------- */
 .svc-lead{font-family:"Noto Serif JP",serif;font-size:clamp(20px,2.6vw,30px);font-weight:500;text-align:center;margin:10px 0 50px;letter-spacing:.05em}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.card{position:relative;display:block;border:1px solid var(--line);padding:46px 28px;text-align:center;transition:background .25s,color .25s,transform .25s,box-shadow .25s;background:#fff}
-.card:hover{background:#1c1c1c;color:#fff;transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.card{position:relative;display:block;border:1px solid var(--line);text-align:center;overflow:hidden;background:#fff;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
+.card-img{width:100%;aspect-ratio:3/2;overflow:hidden;background:#eee}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.card:hover .card-img img{transform:scale(1.06)}
+.card-body{padding:22px 18px 28px}
 .card .en{font-family:"Playfair Display",serif;font-style:italic;font-size:15px;color:var(--gray-head);letter-spacing:.05em}
-.card:hover .en{color:#c9c9c9}
-.card h3{font-weight:700;font-size:21px;letter-spacing:.12em;margin-top:10px}
-.card .arrow{margin-top:18px;font-size:13px;letter-spacing:.2em;color:var(--gray-head)}
-.card:hover .arrow{color:#fff}
+.card h3{font-weight:700;font-size:20px;letter-spacing:.12em;margin-top:8px;color:#171717}
+.card .arrow{margin-top:14px;font-size:13px;letter-spacing:.2em;color:var(--gray-head)}
+.card:hover .arrow{color:#1c1c1c}
 
 /* ---------- 採用 tables ---------- */
 .recruit-block{margin-bottom:70px}
