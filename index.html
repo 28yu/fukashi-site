@@ -11,7 +11,7 @@
 <style>
   /* --- ホーム専用スタイル --- */
   .hero{padding:18px 0 0}
-  .carousel{position:relative;max-width:1180px;margin:0 auto;height:560px;overflow:hidden}
+  .carousel{position:relative;max-width:980px;margin:0 auto;height:460px;overflow:hidden}
   .slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;display:flex;align-items:center;justify-content:flex-end}
   .slide.on{opacity:1}
   .slide .bgimg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.02)}
@@ -27,15 +27,15 @@
   .dots{display:flex;gap:14px;justify-content:center;margin-top:18px}
   .dot{width:9px;height:9px;border-radius:50%;background:#bdbdbd;border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s}
   .dot.on{background:#1c1c1c;transform:scale(1.15)}
-  .tagline{max-width:1180px;margin:46px auto 0;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .tagline{max-width:980px;margin:46px auto 0;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
   .tagline .txt{font-family:"Noto Serif JP",serif;font-size:clamp(24px,3.3vw,40px);font-weight:500;letter-spacing:.06em;display:flex;align-items:center;gap:22px}
   .tagline .txt .bar{width:5px;height:46px;background:#1e1e1e;display:inline-block}
   .tagline .txt em{font-family:"Playfair Display",serif;font-style:italic;font-weight:500}
   .bim-ico{width:150px;height:auto;flex-shrink:0}
-  .divider{max-width:1180px;margin:40px auto 0;border-top:1px solid var(--line)}
+  .divider{max-width:980px;margin:40px auto 0;border-top:1px solid var(--line)}
   .info-sec{padding:70px 0 110px}
-  .info-sec .label{font-family:"Noto Serif JP",serif;font-size:22px;color:var(--gray-head);letter-spacing:.12em;margin:0 auto 30px;max-width:1180px;padding:0 40px}
-  .cols{max-width:1180px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:64px}
+  .info-sec .label{font-family:"Noto Serif JP",serif;font-size:22px;color:var(--gray-head);letter-spacing:.12em;margin:0 auto 30px;max-width:980px;padding:0 30px}
+  .cols{max-width:980px;margin:0 auto;padding:0 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
   .col .num{font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(78px,8vw,120px);color:var(--num);line-height:.9;margin-bottom:34px}
   .col h3{font-weight:700;font-size:20px;letter-spacing:.32em;color:#171717;margin-bottom:26px;line-height:1.7}
   .col .body{font-size:15px;color:var(--text-soft);line-height:2}
